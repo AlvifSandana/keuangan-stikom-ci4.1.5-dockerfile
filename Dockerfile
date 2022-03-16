@@ -32,7 +32,7 @@ RUN a2enmod rewrite
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
-# expose port 86
+# expose port 81
 EXPOSE 81
 
 # create volume
