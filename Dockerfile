@@ -29,6 +29,7 @@ ADD conf/apache.conf /etc/apache2/sites-available/000-default.conf
 # enable RewriteEngine Apache2 module
 RUN a2enmod rewrite
 
+# clean unused linux packages
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
