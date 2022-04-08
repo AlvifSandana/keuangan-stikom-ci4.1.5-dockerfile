@@ -21,10 +21,10 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions
 
 # install docker php extensions
-RUN install-php-extensions gd intl json mbstring mysqlnd mysqli tokenizer xml
+RUN install-php-extensions gd intl json mbstring mysqlnd mysqli tokenizer zip xml
 
 # copy apache .conf file 
-ADD conf/apache.conf /etc/apache2/sites-available/000-default.conf
+ADD config/apache.conf /etc/apache2/sites-available/000-default.conf
 
 # enable RewriteEngine Apache2 module
 RUN a2enmod rewrite
@@ -33,8 +33,8 @@ RUN a2enmod rewrite
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
-# expose port 81
-EXPOSE 81
+# expose port 82
+EXPOSE 82
 
 # create volume
 VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
