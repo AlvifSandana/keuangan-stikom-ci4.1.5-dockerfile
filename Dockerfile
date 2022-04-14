@@ -33,8 +33,8 @@ RUN a2enmod rewrite
 RUN apt-get clean \
     && rm -r /var/lib/apt/lists/*
 
-# expose port 82
-EXPOSE 82
+# expose port 8080
+EXPOSE 8080
 
 # create volume
 VOLUME ["/var/www/html", "/var/log/apache2", "/etc/apache2"]
